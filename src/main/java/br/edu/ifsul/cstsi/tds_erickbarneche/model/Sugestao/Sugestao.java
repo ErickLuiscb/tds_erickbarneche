@@ -1,8 +1,9 @@
-package br.edu.ifsul.cstsi.tds_erickbarneche.model;
+package br.edu.ifsul.cstsi.tds_erickbarneche.model.Sugestao;
 
+import br.edu.ifsul.cstsi.tds_erickbarneche.model.Categoria.Categoria;
+import br.edu.ifsul.cstsi.tds_erickbarneche.model.Usuario.Usuario;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 
 @Entity
@@ -23,6 +24,6 @@ public class Sugestao {
     @ManyToOne(fetch = FetchType.LAZY)
     private Usuario usuario;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     private Collection<Categoria> categorias;
 }

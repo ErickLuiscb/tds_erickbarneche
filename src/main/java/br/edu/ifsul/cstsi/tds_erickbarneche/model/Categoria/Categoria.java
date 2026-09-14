@@ -1,8 +1,8 @@
-package br.edu.ifsul.cstsi.tds_erickbarneche.model;
+package br.edu.ifsul.cstsi.tds_erickbarneche.model.Categoria;
 
+import br.edu.ifsul.cstsi.tds_erickbarneche.model.Sugestao.Sugestao;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 
 @Entity
@@ -18,6 +18,15 @@ public class Categoria {
 
     // Associação
 
-    @ManyToMany(mappedBy = "categorias", fetch = FetchType.LAZY)
+@ManyToMany(mappedBy = "categorias", fetch = FetchType.EAGER)
     private Collection<Sugestao> sugestoes;
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
 }
