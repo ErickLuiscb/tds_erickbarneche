@@ -2,11 +2,18 @@ package br.edu.ifsul.cstsi.tds_erickbarneche.model.Categoria;
 
 import br.edu.ifsul.cstsi.tds_erickbarneche.model.Sugestao.Sugestao;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Collection;
 
 @Entity
 @Table(name = "categorias")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter @Setter
 public class Categoria {
 
     @Id
@@ -16,17 +23,6 @@ public class Categoria {
     private String nome;
     private String descricao;
 
-    // Associação
-
-@ManyToMany(mappedBy = "categorias", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "categorias", fetch = FetchType.EAGER)
     private Collection<Sugestao> sugestoes;
-
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
 }

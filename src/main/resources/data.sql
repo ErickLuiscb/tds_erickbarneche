@@ -5,9 +5,8 @@ VALUES (1, 'Filme', 'Sugestões de filmes'),
        (4, 'Jogo', 'Sugestões de jogos'),
        (5, 'Música', 'Sugestões de músicas ou álbuns');
 
-
 INSERT INTO usuarios (id, nome, email, senha, imagem_perfil, crp, tipo, is_admin)
-VALUES (1, 'Erick Barneche', 'erick@exemplo.com', '123456', NULL, NULL, 'admin', true),
-       (2, 'Maria Silva', 'maria@exemplo.com', 'senha123', NULL, 'CRP-12345', 'psicologo', false),
-       (3, 'João Souza', 'joao@exemplo.com', 'senha456', NULL, NULL, 'comum', false);
+VALUES (1, 'Erick0 Luis', 'admin@email.com', '$2b$12$0WXhFcPcikwbfNU3P/lDgescg77FG2GhNUmaxQaSm.7/FaFyrOe4.', NULL, 'CRP-00001', 'psicologo', true),
+       (2, 'Maria Silveira', 'maria@email.com', '$2b$12$0WXhFcPcikwbfNU3P/lDgescg77FG2GhNUmaxQaSm.7/FaFyrOe4.', NULL, NULL, 'comum', false),
+       (3, 'João Gomes', 'joao@email.com', '$2b$12$0WXhFcPcikwbfNU3P/lDgescg77FG2GhNUmaxQaSm.7/FaFyrOe4.', NULL, NULL, 'comum', false);
 

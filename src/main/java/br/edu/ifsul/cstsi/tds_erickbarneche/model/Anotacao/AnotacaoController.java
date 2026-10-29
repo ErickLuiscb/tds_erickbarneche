@@ -1,5 +1,6 @@
 package br.edu.ifsul.cstsi.tds_erickbarneche.model.Anotacao;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -35,14 +36,14 @@ public class AnotacaoController {
     }
 
     @PostMapping
-    public ResponseEntity<String> insert(@RequestBody Anotacao anotacao, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<String> insert(@Valid @RequestBody Anotacao anotacao, UriComponentsBuilder uriBuilder) {
         var a = anotacaoRepository.save(anotacao);
         var location = uriBuilder.path("api/v1/anotacoes/{id}").buildAndExpand(a.getId()).toUri();
         return ResponseEntity.created(location).build();
     }
 
     @PutMapping("{id}")
-    public String update(@PathVariable(value = "id") Long id, @RequestBody Anotacao anotacao) {
+    public String update(@PathVariable(value = "id") Long id, @Valid @RequestBody Anotacao anotacao) {
         return "update " + anotacao;
     }
 
